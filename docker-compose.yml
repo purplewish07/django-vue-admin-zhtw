@@ -1,0 +1,25 @@
+version: "3"
+services:
+  backend:
+    build: ./server
+    ports:
+      - "8000:80"
+    environment:
+      # 生產的話把DJANGO_ENV這個環境變量刪了 執行docker-compose build backend 重新構建下鏡像
+      - DJANGO_ENV=dev
+    volumes:
+      - ./server:/code
+    links:
+      - redis
+  frontend:
+    build: 
+      context: ./client
+      # 生產用這個
+      # dockerfile: Dockerfile
+      # 開發的話用這個
+      dockerfile: Dockerfile_dev
+    ports:
+      - "8012:80"
+  redis:
+    image: redis
+    command: redis-server --appendonly yes

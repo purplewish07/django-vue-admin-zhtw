@@ -1,0 +1,7 @@
+// 定義混入指令，用於在非nvue環境下的flex定義，因為nvue沒有display屬性，會報錯
+@mixin vue-flex($direction: row) {
+	/* #ifndef APP-NVUE */
+	display: flex;
+	flex-direction: $direction;
+	/* #endif */
+}

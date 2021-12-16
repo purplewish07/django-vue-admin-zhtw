@@ -1,0 +1,903 @@
+{
+	"easycom": {
+		"^u-(.*)": "@/uview-ui/components/u-$1/u-$1.vue"
+	},
+	// "condition": { //模式配置，僅開發期間生效
+	// 	"current": 0, //當前激活的模式(list 的索引項)
+	// 	"list": [{
+	// 		"name": "test", //模式名稱
+	// 		"path": "pages/componentsC/test/index", //啟動頁面，必選
+	// 		"query": "uuid=c4bba940-f69e-11ea-a419-6bafda9d095e&__id__=1" //啟動參數，在頁面的onLoad函數里面得到
+	// 	}]
+	// },
+	"pages": [
+		{
+		    "path" : "pages/home/home",
+		    "style" :                                                                                    
+		    {
+		        "navigationBarTitleText": "主頁",
+		        "enablePullDownRefresh": false
+		    }
+		    
+		},
+		// 演示-組件
+		{
+			"path": "pages/example/components",
+			"style": {
+				"navigationBarTitleText": "組件"
+			}
+		},
+		// avatarCropper-頭像裁剪
+		{
+			"path": "uview-ui/components/u-avatar-cropper/u-avatar-cropper",
+			"style": {
+				"navigationBarTitleText": "頭像裁剪",
+				"navigationBarBackgroundColor": "#000000"
+			}
+		},
+		// 演示-工具
+		{
+			"path": "pages/example/js",
+			"style": {
+				"navigationBarTitleText": "工具"
+			}
+		},
+		// 演示-模板
+		{
+			"path": "pages/example/template",
+			"style": {
+				"navigationBarTitleText": "模板"
+			}
+		},
+		// fullScreen-壓窗屏
+		{
+			"path": "uview-ui/components/u-full-screen/u-full-screen",
+			"style": {
+				"navigationStyle": "custom",
+				"app-plus": {
+					"animationType": "fade-in",
+					"background": "transparent",
+					"backgroundColor": "rgba(0,0,0,0)",
+					"popGesture": "none"
+				}
+			}
+		}
+	    ,{
+            "path" : "pages/my/my",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/uview/uview",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/login/login",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+    ],
+	"subPackages": [{
+			"root": "pages/componentsC",
+			"pages": [
+				// test-測試
+				{
+					"path": "test/index",
+					"style": {
+						"navigationBarTitleText": "Test"
+						// "navigationStyle": "custom" ,// 隱藏系統導航欄
+						// "navigationBarTextStyle": "white" // 狀態欄字體為白色
+					}
+				},
+				// gap-間隔槽
+				{
+					"path": "gap/index",
+					"style": {
+						"navigationBarTitleText": "gap-間隔槽"
+					}
+				},
+				// subsection分段器
+				{
+					"path": "subsection/index",
+					"style": {
+						"navigationBarTitleText": "subsection-分段器"
+					}
+				},
+				// section 查看更多
+				{
+					"path": "section/index",
+					"style": {
+						"navigationBarTitleText": "section-查看更多"
+					}
+				},
+				// link鏈接
+				{
+					"path": "link/index",
+					"style": {
+						"navigationBarTitleText": "link-鏈接"
+					}
+				},
+				// mask遮罩層
+				{
+					"path": "mask/index",
+					"style": {
+						"navigationBarTitleText": "mask-遮罩層"
+					}
+				},
+				// countTo數字滾動
+				{
+					"path": "countTo/index",
+					"style": {
+						"navigationBarTitleText": "countTo-數字滾動"
+					}
+				},
+				// color顏色
+				{
+					"path": "color/index",
+					"style": {
+						"navigationBarTitleText": "color-顏色"
+					}
+				},
+				// countDown倒計時
+				{
+					"path": "countDown/index",
+					"style": {
+						"navigationBarTitleText": "countDown-倒計時"
+					}
+				},
+				// progress進度條
+				{
+					"path": "progress/index",
+					"style": {
+						"navigationBarTitleText": "progress-進度條"
+					}
+				},
+				// alertTips警告提示
+				{
+					"path": "alertTips/index",
+					"style": {
+						"navigationBarTitleText": "alertTips-警告提示"
+					}
+				},
+				// badge 徽標數
+				{
+					"path": "badge/index",
+					"style": {
+						"navigationBarTitleText": "badge-徽標數"
+					}
+				},
+				// button按鈕
+				{
+					"path": "button/index",
+					"style": {
+						"navigationBarTitleText": "button-按鈕"
+					}
+				},
+				// collapse折疊面板
+				{
+					"path": "collapse/index",
+					"style": {
+						"navigationBarTitleText": "collapse-折疊面板"
+					}
+				},
+				// actionSheet操作菜單
+				{
+					"path": "actionSheet/index",
+					"style": {
+						"navigationBarTitleText": "actionSheet-操作菜單"
+					}
+				},
+				// messageInput驗證碼輸入
+				{
+					"path": "messageInput/index",
+					"style": {
+						"navigationBarTitleText": "messageInput-驗證碼輸入"
+					}
+				},
+				// popup彈窗
+				{
+					"path": "popup/index",
+					"style": {
+						"navigationBarTitleText": "popup-彈窗"
+					}
+				},
+				// listCell
+				{
+					"path": "cell/index",
+					"style": {
+						"navigationBarTitleText": "listCell-列表"
+					}
+				},
+				// numberBox數字輸入框
+				{
+					"path": "numberBox/index",
+					"style": {
+						"navigationBarTitleText": "numberBox-步進器"
+					}
+				},
+				// grid宮格佈局
+				{
+					"path": "grid/index",
+					"style": {
+						"navigationBarTitleText": "grid-宮格佈局"
+					}
+				},
+				// layout柵格佈局
+				{
+					"path": "layout/index",
+					"style": {
+						"navigationBarTitleText": "layout-柵格佈局"
+					}
+				},
+				// 加載更多
+				{
+					"path": "loadmore/index",
+					"style": {
+						"navigationBarTitleText": "loadmore-加載更多"
+					}
+				}
+			]
+		},
+		{
+			"root": "pages/template",
+			"pages": [
+				// wxCenter 仿微信個人中心
+				{
+					"path": "wxCenter/index",
+					"style": {
+						"navigationBarTitleText": "wxCenter 仿微信個人中心",
+						"navigationStyle": "custom"
+					}
+				},
+				// keyboardPay 自定義鍵盤支付
+				{
+					"path": "keyboardPay/index",
+					"style": {
+						"navigationBarTitleText": "keyboardPay 自定義鍵盤支付"
+					}
+				},
+				// douyin 仿抖音
+				// {
+				// 	"path": "douyin/index",
+				// 	"style": {
+				// 		"navigationBarTitleText": "douyin 仿抖音"
+				// 	}
+				// },
+				// mallMenu商城分類
+				{
+					"path": "mallMenu/index2",
+					"style": {
+						"navigationBarTitleText": "mallMenu-商城分類"
+					}
+				},
+				// mallMenu商城分類
+				{
+					"path": "mallMenu/index1",
+					"style": {
+						"navigationBarTitleText": "mallMenu-商城分類"
+					}
+				},
+				// coupon優惠券
+				{
+					"path": "coupon/index",
+					"style": {
+						"navigationBarTitleText": "coupon-優惠券"
+					}
+				},
+				{
+					"path": "login/index",
+					"style": {
+						"navigationBarTitleText": "美團登錄"
+					}
+				},
+				// 城市選擇
+				{
+					"path": "citySelect/index",
+					"style": {
+						"navigationBarTitleText": "城市選擇"
+					}
+				},
+				// SubmitBar提交訂單欄
+				{
+					"path": "submitBar/index",
+					"style": {
+						"navigationBarTitleText": "提交訂單欄"
+					}
+				},
+				// comment評論
+				{
+					"path": "comment/index",
+					"style": {
+						"navigationBarTitleText": "評論"
+					}
+				},
+				// comment評論詳情
+				{
+					"path": "comment/reply",
+					"style": {
+						"navigationBarTitleText": "評論詳情"
+					}
+				},
+				// order訂單
+				{
+					"path": "order/index",
+					"style": {
+						"navigationBarTitleText": "訂單"
+					}
+				},
+				// login登錄獲取驗證碼
+				{
+					"path": "login/code",
+					"style": {
+						"navigationBarTitleText": "登錄獲取驗證碼"
+					}
+				},
+				// address用戶地址
+				{
+					"path": "address/index",
+					"style": {
+						"navigationBarTitleText": "用戶地址"
+					}
+				},
+				// address添加用戶地址
+				{
+					"path": "address/addSite",
+					"style": {
+						"navigationBarTitleText": "添加用戶地址"
+					}
+				}
+			]
+		},
+		{
+			"root": "pages/library",
+			"pages": [
+				// debounce-節流防抖
+				{
+					"path": "debounce/index",
+					"style": {
+						"navigationBarTitleText": "throttle | debounce-節流防抖"
+					}
+				},
+				// deepClone-對像深度克隆
+				{
+					"path": "deepClone/index",
+					"style": {
+						"navigationBarTitleText": "deepClone-對像深度克隆"
+					}
+				},
+				// deepMerge-對像深度合併
+				{
+					"path": "deepMerge/index",
+					"style": {
+						"navigationBarTitleText": "deepMerge-對像深度合併"
+					}
+				},
+				// getRect-元素節點
+				{
+					"path": "getRect/index",
+					"style": {
+						"navigationBarTitleText": "getRect-元素節點"
+					}
+				},
+				// timeFrom-多久之前
+				{
+					"path": "timeFrom/index",
+					"style": {
+						"navigationBarTitleText": "timeFrom-多久之前"
+					}
+				},
+				// globalData-全局變量
+				{
+					"path": "globalVariable/globalData",
+					"style": {
+						"navigationBarTitleText": "globalData-全局變量"
+					}
+				},
+				// prototype-全局變量
+				{
+					"path": "globalVariable/prototype",
+					"style": {
+						"navigationBarTitleText": "prototype-全局變量"
+					}
+				},
+				// vuex-全局變量
+				{
+					"path": "globalVariable/vuex",
+					"style": {
+						"navigationBarTitleText": "vuex-全局變量"
+					}
+				},
+				// globalVariable-全局變量
+				{
+					"path": "globalVariable/index",
+					"style": {
+						"navigationBarTitleText": "globalVariable-全局變量"
+					}
+				},
+				// http-請求
+				{
+					"path": "http/index",
+					"style": {
+						"navigationBarTitleText": "http-請求"
+					}
+				},
+				// test-規則驗證
+				{
+					"path": "test/index",
+					"style": {
+						"navigationBarTitleText": "test-規則驗證"
+					}
+				},
+				// mpShare-小程序分享
+				{
+					"path": "mpShare/index",
+					"style": {
+						"navigationBarTitleText": "mpShare-小程序分享"
+					}
+				},
+				// color-JS調用顏色
+				{
+					"path": "color/index",
+					"style": {
+						"navigationBarTitleText": "color-JS調用顏色"
+					}
+				},
+				// trim-去除空格
+				{
+					"path": "trim/index",
+					"style": {
+						"navigationBarTitleText": "trim-去除空格"
+					}
+				},
+				// random-隨機數生成
+				{
+					"path": "random/index",
+					"style": {
+						"navigationBarTitleText": "random-隨機數生成"
+					}
+				},
+				// md5加密
+				{
+					"path": "md5/index",
+					"style": {
+						"navigationBarTitleText": "md5-加密"
+					}
+				},
+				// colorSwitch顏色轉換
+				{
+					"path": "colorSwitch/index",
+					"style": {
+						"navigationBarTitleText": "colorSwitch-顏色轉換"
+					}
+				},
+				// randomArray數組亂序
+				{
+					"path": "randomArray/index",
+					"style": {
+						"navigationBarTitleText": "randomArray-數組亂序"
+					}
+				},
+				// guid全局唯一標識符
+				{
+					"path": "guid/index",
+					"style": {
+						"navigationBarTitleText": "guid-全局唯一標識符"
+					}
+				},
+				// timeFormat時間格式化
+				{
+					"path": "timeFormat/index",
+					"style": {
+						"navigationBarTitleText": "timeFormat-時間格式化"
+					}
+				}, // route-路由
+				{
+					"path": "route/index",
+					"style": {
+						"navigationBarTitleText": "route-路由"
+					}
+				},
+				// route-路由跳轉
+				{
+					"path": "route/routeTo",
+					"style": {
+						"navigationBarTitleText": "route-路由跳轉"
+					}
+				},
+				// queryParams-對像轉URL參數
+				{
+					"path": "queryParams/index",
+					"style": {
+						"navigationBarTitleText": "queryParams-對像轉URL參數"
+					}
+				}
+			]
+		},
+		{
+			"root": "pages/componentsA",
+			"pages": [
+				// parse-富文本解析器
+				{
+					"path": "parse/index",
+					"style": {
+						"navigationBarTitleText": "parse-富文本解析器"
+					}
+				},
+				// backTop-返回頂部
+				{
+					"path": "backTop/index",
+					"style": {
+						"navigationBarTitleText": "backTop-返回頂部"
+					}
+				},
+				// calendar-日曆
+				{
+					"path": "calendar/index",
+					"style": {
+						"navigationBarTitleText": "calendar-日曆"
+					}
+				},
+				// form-表單
+				{
+					"path": "form/index",
+					"style": {
+						"navigationBarTitleText": "form-表單"
+					}
+				},
+				// select-列選擇器
+				{
+					"path": "select/index",
+					"style": {
+						"navigationBarTitleText": "select-列選擇器"
+					}
+				},
+				// slider-滑動選擇器
+				{
+					"path": "slider/index",
+					"style": {
+						"navigationBarTitleText": "slider-滑動選擇器"
+					}
+				},
+				// fullScreen-壓窗屏
+				{
+					"path": "fullScreen/index",
+					"style": {
+						"navigationBarTitleText": "fullScreen-壓窗屏"
+					}
+				},
+				// navbar-自定義導航欄
+				{
+					"path": "navbar/index",
+					"style": {
+						// "navigationBarTitleText": "navbar-自定義導航欄",
+						"navigationStyle": "custom", // 隱藏系統導航欄
+						"navigationBarTextStyle": "white" // 狀態欄字體為白色
+					}
+				},
+				// field-輸入框
+				{
+					"path": "field/index",
+					"style": {
+						"navigationBarTitleText": "field-輸入框"
+					}
+				},
+				// modal-模態框
+				{
+					"path": "modal/index",
+					"style": {
+						"navigationBarTitleText": "modal-模態框"
+					}
+				},
+				// indexList索引列表
+				{
+					"path": "indexList/index",
+					"style": {
+						"navigationBarTitleText": "indexList-索引列表"
+					}
+				},
+				// empty內容為空
+				{
+					"path": "empty/index",
+					"style": {
+						"navigationBarTitleText": "empty-內容為空"
+					}
+				},
+				// avatarCropper-頭像裁剪
+				{
+					"path": "avatarCropper/index",
+					"style": {
+						"navigationBarTitleText": "avatarCropper-頭像裁剪"
+					}
+				}, // noNetwork沒有網絡
+				{
+					"path": "noNetwork/index",
+					"style": {
+						"navigationBarTitleText": "noNetwork-沒有網絡"
+					}
+				}, // icon字體圖標
+				{
+					"path": "icon/index",
+					"style": {
+						"navigationBarTitleText": "icon-字體圖標"
+					}
+				}, // avatar-用戶頭像展示
+				{
+					"path": "avatar/index",
+					"style": {
+						"navigationBarTitleText": "avatar-用戶頭像展示"
+					}
+				}, // keyboard鍵盤
+				{
+					"path": "keyboard/index",
+					"style": {
+						"navigationBarTitleText": "keyboard-鍵盤"
+					}
+				}, // 圖片懶加載
+				{
+					"path": "lazyLoad/index",
+					"style": {
+						"navigationBarTitleText": "lazyLoad-懶加載"
+					}
+				},
+				// tabs切換
+				{
+					"path": "tabs/index",
+					"style": {
+						"navigationBarTitleText": "Tabs-切換"
+					}
+				},
+				// tag標籤
+				{
+					"path": "tag/index",
+					"style": {
+						"navigationBarTitleText": "tag-標籤"
+					}
+				},
+				// timeLine時間軸
+				{
+					"path": "timeLine/index",
+					"style": {
+						"navigationBarTitleText": "timeLine-時間軸"
+					}
+				},
+				// toast輕提示
+				{
+					"path": "toast/index",
+					"style": {
+						"navigationBarTitleText": "toast-輕提示"
+					}
+				},
+				// topTips消息提示
+				{
+					"path": "topTips/index",
+					"style": {
+						"navigationBarTitleText": "topTips-消息提示"
+					}
+				},
+				// Code-驗證碼倒計時
+				{
+					"path": "verificationCode/index",
+					"style": {
+						"navigationBarTitleText": "Code-驗證碼倒計時"
+					}
+				}
+			]
+		},
+		{
+			"root": "pages/componentsB",
+			"pages": [
+				// dropdown-下拉菜單
+				{
+					"path": "dropdown/index",
+					"style": {
+						"navigationBarTitleText": "dropdown-下拉菜單"
+					}
+				},
+				// tabbar-底部導航欄
+				{
+					"path": "tabbar/index",
+					"style": {
+						"navigationBarTitleText": "tabbar-底部導航欄"
+					}
+				},
+				// line-線條
+				{
+					"path": "line/index",
+					"style": {
+						"navigationBarTitleText": "line-線條"
+					}
+				},
+				// image-圖片
+				{
+					"path": "image/index",
+					"style": {
+						"navigationBarTitleText": "image-圖片"
+					}
+				},
+				// card-卡片
+				{
+					"path": "card/index",
+					"style": {
+						"navigationBarTitleText": "card-卡片"
+					}
+				},
+				// divider-分割線
+				{
+					"path": "divider/index",
+					"style": {
+						"navigationBarTitleText": "divider-分割線"
+					}
+				},
+				// picker選擇器
+				{
+					"path": "picker/index",
+					"style": {
+						"navigationBarTitleText": "picker-選擇器"
+					}
+				}, // noticeBar通告欄
+				{
+					"path": "noticeBar/index",
+					"style": {
+						"navigationBarTitleText": "noticeBar-通告欄"
+					}
+				},
+				// checkbox-復選框
+				{
+					"path": "checkbox/index",
+					"style": {
+						"navigationBarTitleText": "checkbox-復選框"
+					}
+				},
+				// radio-單選框
+				{
+					"path": "radio/index",
+					"style": {
+						"navigationBarTitleText": "radio-單選框"
+					}
+				},
+				// loading-加載動畫
+				{
+					"path": "loading/index",
+					"style": {
+						"navigationBarTitleText": "loading-加載動畫"
+					}
+				},
+				// switch-開關選擇器
+				{
+					"path": "switch/index",
+					"style": {
+						"navigationBarTitleText": "switch-開關選擇器"
+					}
+				},
+				// 骨架屏
+				{
+					"path": "skeleton/index",
+					"style": {
+						"navigationBarTitleText": "skeleton-骨架屏"
+					}
+				}, // upload上傳
+				{
+					"path": "upload/index",
+					"style": {
+						"navigationBarTitleText": "upload-上傳"
+					}
+				},
+				// waterfall瀑布流
+				// #ifndef MP-TOUTIAO 
+				{
+					"path": "waterfall/index",
+					"style": {
+						"navigationBarTitleText": "waterfall-瀑布流"
+					}
+				},
+				// #endif
+				// table表格
+				{
+					"path": "table/index",
+					"style": {
+						"navigationBarTitleText": "table-表格"
+					}
+				},
+				// rate評分
+				{
+					"path": "rate/index",
+					"style": {
+						"navigationBarTitleText": "rate-評分"
+					}
+				},
+				// readMore顯示更多
+				{
+					"path": "readMore/index",
+					"style": {
+						"navigationBarTitleText": "readMore-查看更多"
+					}
+				},
+				// search搜索框
+				{
+					"path": "search/index",
+					"style": {
+						"navigationBarTitleText": "search-搜索框"
+					}
+				},
+				// steps步驟條
+				{
+					"path": "steps/index",
+					"style": {
+						"navigationBarTitleText": "steps-步驟條"
+					}
+				},
+				// sticky吸頂
+				{
+					"path": "sticky/index",
+					"style": {
+						"navigationBarTitleText": "sticky-吸頂"
+					}
+				},
+				// swiper輪播圖
+				{
+					"path": "swiper/index",
+					"style": {
+						"navigationBarTitleText": "swiper-輪播圖"
+					}
+				},
+				// swipeAction-左滑刪除
+				{
+					"path": "swipeAction/index",
+					"style": {
+						"navigationBarTitleText": "swipeAction-左滑刪除"
+					}
+				}
+			]
+		}
+	],
+	"preloadRule": {
+		"pages/example/components": {
+			"network": "all",
+			"packages": ["pages/componentsA", "pages/componentsB", "pages/componentsC"]
+		}
+	},
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "uView",
+		"navigationBarBackgroundColor": "#FFFFFF",
+		"backgroundColor": "#FFFFFF"
+	},
+	"tabBar": {
+		"color": "#909399",
+		"selectedColor": "#303133",
+		"backgroundColor": "#FFFFFF",
+		"borderStyle": "black",
+		"list": [{
+				"pagePath": "pages/home/home",
+				"iconPath": "static/uview/example/component.png",
+				"selectedIconPath": "static/uview/example/component_select.png",
+				"text": "主頁"
+			},
+			{
+				"pagePath": "pages/uview/uview",
+				"iconPath": "static/uview/example/js.png",
+				"selectedIconPath": "static/uview/example/js_select.png",
+				"text": "uview"
+			},
+			{
+				"pagePath": "pages/my/my",
+				"iconPath": "static/uview/example/template.png",
+				"selectedIconPath": "static/uview/example/template_select.png",
+				"text": "我的"
+			}
+		]
+	}
+}

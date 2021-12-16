@@ -1,0 +1,7 @@
+/**
+ * 下方引入的為uView UI的集成樣式文件，為scss預處理器，其中包含了一些"u-"開頭的自定義變量
+ * 使用的時候，請將下面的一行複製到您的uniapp項目根目錄的uni.scss中即可
+ * uView自定義的css類名和scss變量，均以"u-"開頭，不會造成衝突，請放心使用 
+ */
+@import 'uview-ui/theme.scss';
+
