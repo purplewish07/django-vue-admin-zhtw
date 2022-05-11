@@ -58,4 +58,7 @@ class FitJSONRenderer(JSONRenderer):
         else:
             response_body.data = data
         renderer_context.get("response").status_code = 200  # 統一成200響應,用code區分
+        
+        # 普通的response將會被包裝成：
+        # {"code":200,"data":"X","msg":"X"}
         return super(FitJSONRenderer, self).render(response_body.dict, accepted_media_type, renderer_context)

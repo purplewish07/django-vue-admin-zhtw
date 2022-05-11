@@ -30,6 +30,7 @@ export function updateWork_order(id, data) {
   })
 }
 
+
 export function deleteWork_order(id) {
   return request({
     url: `/report_system/work_list/${id}/`,

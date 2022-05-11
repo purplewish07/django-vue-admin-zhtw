@@ -34,17 +34,48 @@ from .serializers import (DictSerializer, DictTypeSerializer, FileSerializer,
                           UserCreateSerializer, UserListSerializer,
                           UserModifySerializer)
 
+from django.contrib.auth.views import LoginView 
+# from django.contrib.auth import (login as autn_login)
+from django.contrib.auth import (
+    REDIRECT_FIELD_NAME, get_user_model, login as auth_login,
+    logout as auth_logout, update_session_auth_hash,
+)
+import os
+from .forms import RsaAuthenticationForm
+
 logger = logging.getLogger('log')
 # logger.info('請求成功！ response_code:{}；response_headers:{}；response_body:{}'.format(response_code, response_headers, response_body[:251]))
 # logger.error('請求出錯-{}'.format(error))
 
 from server.celery import app as celery_app
+
+class RsaKey(APIView):
+    """
+    return rsa public key
+    """
+    #authentication_classes = []
+    permission_classes = []
+
+    def get(self, request, format=None):
+        module_dir = os.path.dirname(__file__)  # get current directory
+        public_key = open(module_dir + "\..\..\..\ssl\public.pem").read().replace("\n","")
+        return Response(public_key)
+
 class TaskList(APIView):
     permission_classes = ()
 
     def get(self, requests):
         tasks = list(sorted(name for name in celery_app.tasks if not name.startswith('celery.')))
         return Response(tasks)
+
+class RsaLoginView(LoginView):
+    form_class = RsaAuthenticationForm
+    authentication_form = None
+    redirect_field_name = REDIRECT_FIELD_NAME
+    template_name = 'registration/login.html'
+    redirect_authenticated_user = False
+    extra_context = None
+    
 
 class LogoutView(APIView):
     permission_classes = []

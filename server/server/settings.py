@@ -24,6 +24,14 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'ez9z3a4m*$%srn9ve_t71yd!v+&xn9@0k(e(+l6#g1h=e5i4da'
 
 # SECURITY WARNING: don't run with debug turned on in production!
+DEBUG = False
+if DEBUG is True:
+    SESSION_COOKIE_SECURE = False
+    CSRF_COOKIE_HTTPONLY = False
+else:
+    SESSION_COOKIE_SECURE = True
+    CSRF_COOKIE_HTTPONLY = True
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTOCOL', 'https')
 
 
 ALLOWED_HOSTS = ['*']
@@ -42,11 +50,17 @@ INSTALLED_APPS = [
     'django_celery_beat',
     'drf_yasg',
     'rest_framework',
+    'bulk_update_or_create',
     "django_filters",
     'simple_history',
+    'werkzeug_debugger_runserver',
+    'django_extensions',
     'apps.system',
     'apps.monitor',
     'apps.report_system',
+    'apps.task_system',
+    'apps.tag_system',
+    'apps.warehouse_management',
 ]
 
 MIDDLEWARE = [
@@ -168,7 +182,23 @@ SIMPLE_JWT = {
 
 # 跨域配置/可用nginx處理,無需引入corsheaders
 CORS_ORIGIN_ALLOW_ALL = True
-CORS_ALLOW_CREDENTIALS = False
+CORS_ALLOW_CREDENTIALS = True
+CORS_ALLOW_HEADERS = [
+    'accept',
+    'accept-encoding',
+    'authorization',
+    'content-type',
+    'dnt',
+    'origin',
+    'user-agent',
+    'x-csrftoken',
+    'x-requested-with',
+]
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:8100",
+    "http://192.168.2.3:9528",
+    "http://192.168.2.3:8000",
+]
 
 # Auth配置
 AUTH_USER_MODEL = 'system.User'
@@ -189,7 +219,8 @@ AUTHENTICATION_BACKENDS = (
 # }
 
 # celery配置,celery正常運行必須安裝redis
-CELERY_BROKER_URL = "redis://redis:6379/0"   # 任務存儲
+# CELERY_BROKER_URL = "redis://redis:6379/0"   # 任務存儲
+CELERY_BROKER_URL = "redis://127.0.0.1:6379/0"   # 任務存儲
 CELERYD_MAX_TASKS_PER_CHILD = 100  # 每個worker最多執行300個任務就會被銷毀，可防止內存洩露
 CELERY_TIMEZONE = 'Asia/Taipei'  # 設置時區
 CELERY_ENABLE_UTC = True  # 啟動時區設置

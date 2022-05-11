@@ -1,5 +1,6 @@
 import Vue from 'vue'
 
+
 import 'normalize.css/normalize.css' // A modern alternative to CSS resets
 
 import ElementUI from 'element-ui'
@@ -45,3 +46,10 @@ new Vue({
   store,
   render: h => h(App)
 })
+
+// new Vue({
+  // render: h => h(App),
+  // store,
+  // router,
+  // components: { App }
+// }).$mount('#app')

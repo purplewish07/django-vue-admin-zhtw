@@ -11,7 +11,7 @@ class Work_orderViewSet(ModelViewSet):
     製令-增刪改查
     """
     perms_map = {'get': '*', 'post': 'work_create',
-                 'put': 'work_update', 'delete': 'work_delete'}
+                 'put': '*', 'delete': 'work_delete'}
     queryset = Work_order.objects.all()
     serializer_class = Work_orderSerializer
     pagination_class = None

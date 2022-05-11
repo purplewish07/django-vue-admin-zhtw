@@ -13,7 +13,7 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from apps.system.views import FileViewSet, LogoutView
+from apps.system.views import FileViewSet, LogoutView , RsaLoginView
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
@@ -43,6 +43,7 @@ schema_view = get_schema_view(
 urlpatterns = [
     path('api/admin/doc/', include('django.contrib.admindocs.urls')),
     path('api/admin/', admin.site.urls),
+    path('api/login/', RsaLoginView.as_view(), name='login'),
 
     # api
     path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
@@ -52,6 +53,9 @@ urlpatterns = [
     path('api/system/', include('apps.system.urls')),
     path('api/monitor/', include('apps.monitor.urls')),
 	path('api/report_system/', include('apps.report_system.urls')),
+	path('api/task_system/', include('apps.task_system.urls')),
+	path('api/tag_system/', include('apps.tag_system.urls')),
+	path('api/warehouse_management/', include('apps.warehouse_management.urls')),
 
     # api文檔
     path('api/docs/', include_docs_urls(title="接口文檔", authentication_classes=[], permission_classes=[])),
