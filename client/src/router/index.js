@@ -147,6 +147,11 @@ export const asyncRoutes = [
       component: () => import('@/views/warehouse_management/storage_spaces.vue'),
       meta: { title: '儲位管理', icon: 'dashboard' , perms: ['work_manage']}
     },{
+      path: 'storage_update',
+      name: 'storage_update',
+      component: () => import('@/views/warehouse_management/storage_update.vue'),
+      meta: { title: '儲位更新', icon: 'dashboard' , perms: ['work_manage']}
+    },{
       path: 'barcode',
       name: 'barcode',
       component: () => import('@/views/warehouse_management/barcode.vue'),

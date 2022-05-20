@@ -178,6 +178,9 @@ REST_FRAMEWORK = {
 # simplejwt配置
 SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME': timedelta(days=1),
+    # 'ACCESS_TOKEN_LIFETIME': timedelta(seconds=10),
+    # 'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
+    # 'ROTATE_REFRESH_TOKENS': True,
 }
 
 # 跨域配置/可用nginx處理,無需引入corsheaders

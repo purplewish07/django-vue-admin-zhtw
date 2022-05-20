@@ -36,7 +36,12 @@ class Storage_listViewSet(ModelViewSet):
     def create_or_update(self, request, *args, **kwargs):
         items=[]
         update_time=timezone.localtime()
+        
         for res in request.data:
-            items.append(Storage_list(name=res['name'],storage_spaces=res['storage_spaces'],user=res['user'],update_time=update_time))
+            if 9<=len(res['name'])<=12:
+                items.append(Storage_list(name=res['name'],storage_spaces=res['storage_spaces'],user=res['user'],update_time=update_time))
+            else:
+                res.update(error='format error')
+                
         Storage_list.objects.bulk_update_or_create(items, ['storage_spaces','update_time','user'], match_field='name')
         return Response(request.data, status=status.HTTP_200_OK)
